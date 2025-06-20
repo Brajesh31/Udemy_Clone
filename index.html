@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Udemy Clone</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Navbar Link Hover Effect */
+    .menu-item:hover {
+      text-decoration: underline;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Tooltip Styles */
+    .tooltip {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: translateY(8px);
+      opacity: 0;
+      visibility: hidden;
+      background-color: #333;
+      color: white;
+      padding: 8px;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 50;
+    }
+
+    /* Tooltip visible on hover */
+    .group:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-gray-200">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <!-- Logo and Title -->
+      <div class="flex items-center space-x-3">
+        <img src="images/udemy_logo.png" alt="Udemy Logo" class="w-10 h-10">
+        <h1 class="text-2xl font-bold text-purple-600">Udemy</h1>
+      </div>
+
+      <!-- Search -->
+      <div class="hidden md:flex flex-1 mx-4">
+        <div class="flex items-center border border-gray-300 rounded-full px-4 py-2 w-full">
+          <i class="fa-solid fa-magnifying-glass text-gray-600"></i>
+          <input type="text" placeholder="Search for anything here, Tech, Business, Art..." 
+                 class="ml-2 bg-transparent outline-none w-full text-sm">
+        </div>
+      </div>
+
+      <!-- Desktop Nav Items -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#" class="menu-item text-gray-800 hover:text-purple-600 hover:bg-gray-200 px-3 py-2 rounded-md">Courses</a>
+        <div class="relative group">
+          <a href="#" class="menu-item text-gray-800 hover:text-purple-600 hover:bg-gray-200 px-3 py-2 rounded-md">My Learning</a>
+          <div class="tooltip">You don't have any current learning</div>
+        </div>
+
+        <div class="relative group">
+          <a href="#" class="nav-button text-gray-800 hover:text-purple-600 p-2 rounded-full transition-all">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <div class="tooltip">Your Cart is Empty..!</div>
+        </div>
+
+        <div class="relative group">
+          <a href="#" class="nav-button text-gray-800 hover:text-purple-600 p-2 rounded-full transition-all">
+            <i class="fa-solid fa-bell"></i>
+          </a>
+          <div class="tooltip">No Notifications Available</div>
+        </div>
+
+        <div class="relative group">
+          <button class="nav-button text-gray-800 hover:text-purple-600 p-2 transition-all">
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div class="tooltip">Username: User<br>Mail: example@gmail.com</div>
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger Menu -->
+      <button class="md:hidden text-gray-800" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center text-white py-32" style="background-image: url('images/Sale_Img.jpg');">
+    <div class="container mx-auto text-left px-0 lg:px-10">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-black">Udemy Flash Sale <br> 24 Hours to Save!</h1>
+      <p class="text-lg md:text-xl mb-6 text-black">Get the Top Courses for just ₹499.<br>Only one day to save! Lifetime Access to Learn..!</p>
+      <a href="#courses" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700 ml-4">Explore Courses</a>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="py-12 bg-gray-200">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-purple-600 mb-8">Popular Categories</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">Development</a>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">Business</a>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">IT & Software</a>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">Design</a>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">Marketing</a>
+        <a href="#" class="bg-purple-600 text-white px-6 py-3 rounded-full text-lg hover:bg-purple-700">Personal Development</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Courses Section -->
+  <section id="courses" class="container mx-auto py-12">
+    <h2 class="text-3xl font-bold text-center mb-6">Featured Courses</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Course Cards -->
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <img src="images/1.jpg" alt="Course 1" class="w-full h-40 object-cover rounded-lg">
+        <h3 class="mt-4 text-xl font-semibold">MERN FullStack Development</h3>
+        <p class="text-sm text-gray-600">Instructor: Mr. S. Abishek</p>
+        <p class="text-sm text-yellow-500">4.5 ⭐⭐⭐⭐</p>
+        <p class="text-lg font-bold text-purple-600">₹9999 <span class="line-through text-gray-500 text-sm">₹19999</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <img src="images/2.jpg" alt="Course 2" class="w-full h-40 object-cover rounded-lg">
+        <h3 class="mt-4 text-xl font-semibold">Python FullStack</h3>
+        <p class="text-sm text-gray-600">Instructor: Ms. S. Harishma</p>
+        <p class="text-sm text-yellow-500">4.0 ⭐⭐⭐⭐</p>
+        <p class="text-lg font-bold text-purple-600">₹7999 <span class="line-through text-gray-500 text-sm">₹9999</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <img src="images/3.jpg" alt="Course 3" class="w-full h-40 object-cover rounded-lg">
+        <h3 class="mt-4 text-xl font-semibold">Python Programming</h3>
+        <p class="text-sm text-gray-600">Instructor: Mr. S. Dinesh Prabhu</p>
+        <p class="text-sm text-yellow-500">4.3 ⭐⭐⭐⭐</p>
+        <p class="text-lg font-bold text-purple-600">₹6999 <span class="line-through text-gray-500 text-sm">₹8999</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <img src="images/4.jpg" alt="Course 4" class="w-full h-40 object-cover rounded-lg">
+        <h3 class="mt-4 text-xl font-semibold">C/C++ Programming</h3>
+        <p class="text-sm text-gray-600">Instructor: Ms. M. Aishwarya</p>
+        <p class="text-sm text-yellow-500">3.5 ⭐⭐⭐</p>
+        <p class="text-lg font-bold text-purple-600">₹5999 <span class="line-through text-gray-500 text-sm">₹6999</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-8">
+    <div class="mb-6">
+      <a href="https://www.linkedin.com/in/abishek04/" target="_blank" class="text-white hover:text-yellow-500 mx-4">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/AbishekSathiyan" target="_blank" class="text-white hover:text-yellow-500 mx-4">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+    </div>    
+    <p>&copy; 2025 Udemy Clone. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Hamburger Menu Toggle for Mobile
+    document.getElementById('hamburger-menu').addEventListener('click', () => {
+      const menuItems = document.querySelector('.md\\:hidden');
+      menuItems.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
