@@ -101,3 +101,21 @@ To get a local copy up and running, follow these detailed steps.
 ### ### 🔑 Environment Variables
 
 You need to create a `.env` file in the `server` directory and add the following variables:
+
+MONGO_URI="Your_MongoDB_Connection_String"
+JWT_SECRET="Your_JWT_Secret_Key"
+STRIPE_SECRET_KEY="Your_Stripe_Secret_Key"
+CLOUDINARY_CLOUD_NAME="Your_Cloudinary_Cloud_Name"
+CLOUDINARY_API_KEY="Your_Cloudinary_API_Key"
+CLOUDINARY_API_SECRET="Your_Cloudinary_API_Secret"
+
+
+---
+## ## 📜 License
+
+Distributed under the MIT License. See `LICENSE` file for more information.
+
+---
+## ## 📬 Contact
+
+Brajesh - [@Brajesh31 on GitHub](https://github.com/Brajesh31)
